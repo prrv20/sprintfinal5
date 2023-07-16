@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
 		if (action == null) {
-			request.getRequestDispatcher("usuario.jsp").forward(request, response);
+			request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 		} else {
 			if (action.equalsIgnoreCase("cerrar_sesion.jsp")) {
 				session.removeAttribute("usName");
@@ -72,7 +72,7 @@ public class Login extends HttpServlet {
 	         if (username.equals("admin")) {
 	             if (password.equals("1234")) {
 	                 session.setAttribute("admin", username);
-	                 response.sendRedirect("usuario.jsp?name=" + username);
+	                 response.sendRedirect("dashboard.jsp?name=" + username);
 	             } else {
 	                 RequestDispatcher rd = request.getRequestDispatcher("login_user.jsp");
 	                 out.println("<font color=red>Usuario / Password incorrecto, intenta nuevamente</font>");

@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="dashboard.jsp">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +45,7 @@
             Usuarios
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="crear_usuario.jsp">Crear Usuario</a></li>
+            <li><a class="dropdown-item" href="crear_usuarios.jsp">Crear Usuarios</a></li>
             <li><a class="dropdown-item" href="listar_usuarios.jsp">Listar Usuarios</a></li>
           </ul>
         </li>
@@ -64,8 +64,6 @@
     <h1>Bienvenido al Sistema de Control de Asesorías</h1>
     <p>Este sistema te permite gestionar y controlar las asesorías realizadas.</p>
   </div>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 <% out.print("Session id:" + session.getId()); %>
