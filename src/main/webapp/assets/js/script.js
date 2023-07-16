@@ -83,4 +83,16 @@ var Fn = {
 	
 }
 
+$(document).ready(function () {
+        $('#txtrut').Rut({
+            rutDelimiter: ".",
+            enableValidation: true,
+            onValidationSuccess: function(){
+                console.log("Success!");
+            },
+            onValidationFailure: function(){
+                console.log("Failure");
+            }
+        });
+    });
 
