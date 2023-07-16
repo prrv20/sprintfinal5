@@ -6,39 +6,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario de inicio de sesion</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  	<link rel="stylesheet" href="./assets/css/style_login.css">
 </head>
 <body>
-
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="text-center">Iniciar sesion</h3>
-          </div>
-          <div class="card-body">
-            <form action="Login" method=post>
-              <div class="form-group">
-                <label for="email">Usuario</label>
-                <input type="text" class="form-control" name="username" placeholder="Ingresa tu usuario">
-              </div>
-              <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" class="form-control" name="password" placeholder="Ingresa tu contraseña">
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
-              </br>
-              <% out.print("Session id:" + session.getId()); %>
-            </form>
-          </div>
-        </div>
+   <div class="login-page">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+               <div class="card login">
+                  <h1>Iniciar Sesion</h1>
+                  <form action="Login" method="post" class="form-group">
+                     <input type="text" class="form-control" placeholder="Usuario" name="username" required>
+                     <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+                     <input type="submit" class="btn btn-primary" value="Ingresar">
+                     <br>
+                     <% out.print("Session id:" + session.getId()); %>
+                  </form>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-  
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 </body>
 </html>

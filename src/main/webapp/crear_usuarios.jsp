@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Creacion de Usuarios</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
@@ -48,7 +49,8 @@
   </div>
 </nav>
 <div class="container col-sm-10 col-md-8">
-        <h2>Formulario Dinámico</h2>
+		<br>
+        <h2>Creacion de Usuarios</h2>
         <form action="">
             <div class="usuario">
                 <div class="mb-3">
@@ -124,7 +126,6 @@
         </form>
       
     </div>
-     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 	<script type="text/javascript"src="./assets/js/script_user.js"></script>
