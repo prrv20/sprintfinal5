@@ -12,7 +12,7 @@ import controlador.ActualizarCapacitacion;
 import controlador.CrearCapacitacion;
 import controlador.EditarCapacitacion;
 import controlador.ListarCapacitacion;
-
+import controlador.Login;
 
 public class Conexion {
     private static Conexion instancia;
@@ -20,6 +20,29 @@ public class Conexion {
 
     private Conexion() {
 
+    }   
+    
+    public Connection obtenerConexion() {
+        String url = "jdbc:mysql://54.80.27.42:3306/";
+        String db = "asesorias";
+        String usuario = "Hola";
+        String password = "Hola.2023";
+        String driver ="com.mysql.cj.jdbc.Driver";
+        Connection conexion = null;
+        
+        try {
+            Class.forName(driver);
+            conexion = DriverManager.getConnection(url+db, usuario, password);
+        } catch (ClassNotFoundException | SQLException e) {
+            System.err.println("Error al cargar el controlador de la base de datos.");
+            e.printStackTrace();
+        } 
+        
+        if (conexion == null) {
+            throw new RuntimeException("No se pudo establecer la conexión a la base de datos.");
+        }
+        
+        return conexion;
     }
 
     public static Conexion getInstancia() {
@@ -133,28 +156,26 @@ public class Conexion {
             e.printStackTrace();
         }
     }
-  
     
-    public Connection obtenerConexion() {
-        String url = "jdbc:mysql://54.80.27.42:3306/";
-        String db = "asesorias";
-        String usuario = "Hola";
-        String password = "Hola.2023";
-        String driver ="com.mysql.cj.jdbc.Driver";
-        Connection conexion = null;
-        
-        try {
-            Class.forName(driver);
-            conexion = DriverManager.getConnection(url+db, usuario, password);
-        } catch (ClassNotFoundException | SQLException e) {
-            System.err.println("Error al cargar el controlador de la base de datos.");
+    public boolean validarUsuario(Login login) {
+    	boolean status = false;
+    	String consulta = "SELECT * from asesorias.login WHERE user = ? and password = ? ";
+    	
+    	try (Connection conexion = obtenerConexion();
+    		PreparedStatement statement = conexion.prepareStatement(consulta)) {
+            statement.setString(1, login.getUsername());
+            statement.setString(2, login.getPassword());
+            
+            System.out.println(statement);
+            ResultSet rs = statement.executeQuery();
+            status = rs.next();
+
+    	} catch (SQLException e) {
             e.printStackTrace();
-        } 
-        
-        if (conexion == null) {
-            throw new RuntimeException("No se pudo establecer la conexión a la base de datos.");
         }
-        
-        return conexion;
+        return status;
+    		
+    	}
     }
-}
+  
+   

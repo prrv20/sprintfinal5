@@ -21,11 +21,11 @@
             <form action="Login" method=post>
               <div class="form-group">
                 <label for="email">Usuario</label>
-                <input type="text" class="form-control" name="usName" placeholder="Ingresa tu usuario">
+                <input type="text" class="form-control" name="username" placeholder="Ingresa tu usuario">
               </div>
               <div class="form-group">
                 <label for="password">Contraseña</label>
-                <input type="password" class="form-control" name="usPass" placeholder="Ingresa tu contraseña">
+                <input type="password" class="form-control" name="password" placeholder="Ingresa tu contraseña">
               </div>
               <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
               </br>

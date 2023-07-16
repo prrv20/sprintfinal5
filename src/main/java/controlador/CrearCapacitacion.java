@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import modelo.Conexion;
-import interfaces.ICapacitacion;
+
 
 
 /**
