@@ -7,16 +7,16 @@ function mostrarCampos() {
       campos[i].style.display = "none";
     }
 // Muestra los campos según la opción seleccionada
-    if (seleccion === "opcion1") {
+    if (seleccion === "Cliente") {
       document.getElementById("campo1").style.display = "block";
       document.getElementById("boton").style.display = "block";
    
-    } else if (seleccion === "opcion2") {
+    } else if (seleccion === "Profesional") {
       document.getElementById("campo3").style.display = "block";
       document.getElementById("boton").style.display = "block";
      
      
-    } else if (seleccion === "opcion3") {
+    } else if (seleccion === "Administrativo") {
       document.getElementById("campo6").style.display = "block";
       document.getElementById("boton").style.display = "block";
    

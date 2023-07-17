@@ -51,54 +51,54 @@
 <div class="container col-sm-10 col-md-8">
 		<br>
         <h2>Creacion de Usuarios</h2>
-        <form action="">
+        <form action="CrearUsuario" method="post">
             <div class="usuario">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Run</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="12345678-9">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="run" placeholder="12345678-9">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Completo">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="nombreCompleto" placeholder="Nombre Completo">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Fecha Nacimiento</label>
-                    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Fecha Nacimiento">
+                    <input type="date" class="form-control" id="exampleFormControlInput1" name="fechaNacimiento" placeholder="Fecha Nacimiento">
                 </div>
                 
               </div>
               <label for="opciones">Tipo de Usuario:</label>
-              <select id="opciones" onchange="mostrarCampos()"" class="form-select" aria-label="Default select example">
+              <select id="opciones" onchange="mostrarCampos()" class="form-select"aria-label="Default select example"name="tipoUsuario">
                 <option selected>Seleccione el tipo de Usuario</option>
-                <option value="opcion1">Cliente</option>
-                <option value="opcion2">Profesional</option>
-                <option value="opcion3">Administrativo</option>
+                <option value="Cliente">Cliente</option>
+                <option value="Profesional">Profesional</option>
+                <option value="Administrativo">Administrativo</option>
               </select>
               
         
               <div class="cliente">
                 <div id="campo1" class="campo mt-3" style="display: none">
                     <label for="campo1_input1">Telefono:</label>
-                    <input type="text" id="campo1_input1" class="form-control"/>
+                    <input type="text" id="campo1_input1" class="form-control"name="telefono"/>
                     <label class="mt-2" for="campo1_input2">Direccion:</label>
-                    <input type="text" id="campo1_input2" class="form-control" />
+                    <input type="text" id="campo1_input2" class="form-control"name="direccion" />
                     <label for="campo2_input" class="mt-2">Comuna:</label>
-                    <input type="text" id="campo2_input" class="form-control mb-2" />
+                    <input type="text" id="campo2_input" class="form-control mb-2"name="comuna" />
                     <label for="campo2_input" class="mt-2"></label>Sistema de Salud:</label>
-                    <select class="form-select mt-2" aria-label="Default select example">
+                    <select class="form-select mt-2" aria-label="Default select example"name="sistemaSalud">
                         <option selected>Selecciona Sistema de Salud</option>
                         <option value="1">FONASA</option>
                         <option value="2">ISAPRE</option>    
                     </select>
                     <label for="campo2_input" class="mt-2">AFP:</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example"name="afp">
                         <option selected>Elige Una Opcion</option>
-                        <option value="1">AFP CAPITAL</option>
-                        <option value="2">AFP HABITAT</option>
-                        <option value="3">AFP CUPRUM</option>
-                        <option value="4">AFP MODELO</option>
-                        <option value="5">AFP PLANVITAL</option>
-                        <option value="6">AFP PROVIDA</option>
+                        <option value="Capital">AFP CAPITAL</option>
+                        <option value="Habitat">AFP HABITAT</option>
+                        <option value="Cuprum">AFP CUPRUM</option>
+                        <option value="Modelo">AFP MODELO</option>
+                        <option value="PlanVital">AFP PLANVITAL</option>
+                        <option value="Provida">AFP PROVIDA</option>
                       </select>
                 </div>
                   
@@ -108,18 +108,19 @@
               <div class="profesinal mt-3">
                 <div id="campo3" class="campo" style="display: none">
                     <label for="campo3_input1">Titulo:</label>
-                    <input type="text" id="campo3_input1" class="form-control"/>
+                    <input type="text" id="campo3_input1" class="form-control"name="titulo"/>
                     <label for="campo3_input2" class="mt-2">Fecha de Ingreso:</label>
-                    <input type="text" id="campo3_input2" class="form-control" />
+                    <input type="date" id="campo3_input2" class="form-control"name="fechaIngreso" />
                   </div>
               </div>
               
               <div class="administrativo mt-3">
                 <div id="campo6" class="campo" style="display: none">
                     <label for="campo6_input1">Area:</label>
-                    <input type="text" id="campo6_input1" class="form-control" />
+                    <input type="text" id="campo6_input1" class="form-control"name="fechaIngreso" />
                     <label for="campo6_input2" class="mt-2">Experiencia Previa:</label>
-                    <input type="text" id="campo6_input2" class="form-control"/>
+                    <input type="text" id="campo6_input2" class="form-control"name="experiencia"/>
+                    <br>
                   </div>
               </div>
               <button type="submit" class="btn btn-success" id="boton" style="display: none">Registrar</button>

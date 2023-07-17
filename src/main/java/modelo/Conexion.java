@@ -13,6 +13,8 @@ import controlador.CrearCapacitacion;
 import controlador.EditarCapacitacion;
 import controlador.ListarCapacitacion;
 import controlador.Login;
+import controlador.CrearUsuario;
+import modelo.Usuario;
 
 public class Conexion {
     private static Conexion instancia;
@@ -176,6 +178,38 @@ public class Conexion {
         return status;
     		
     	}
+    
+    public void crearUsuario(CrearUsuario usuario) {
+    	String consulta = "INSERT INTO asesorias.usuario (rut, nombreCompleto, fechaNacimiento, telefono, direccion, comuna, afp, sistemaSalud, fechaIngreso, titulo, area, experiencia, tipoUsuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    	
+    	try (Connection conexion = obtenerConexion();
+    		PreparedStatement statement = conexion.prepareStatement(consulta)) {
+    		statement.setString(1, usuario.getRun());
+    		statement.setString(2, usuario.getNombreCompleto());
+    		statement.setString(3, usuario.getFechaNacimiento());
+    		statement.setString(4, usuario.getTelefono());
+    		statement.setString(5, usuario.getDireccion());
+    		statement.setString(6, usuario.getComuna());
+    		statement.setString(7, usuario.getAfp());
+    		statement.setString(8, usuario.getSistemaSalud());
+    		statement.setString(9, usuario.getFechaIngreso());
+    		statement.setString(10, usuario.getTitulo());
+    		statement.setString(11, usuario.getArea());
+    		statement.setString(12, usuario.getExperiencia());
+    		statement.setString(13, usuario.getTipoUsuario());
+    		
+    		statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+    		
+    		
+    		
+    	
+    }
+    
+    
   
    
