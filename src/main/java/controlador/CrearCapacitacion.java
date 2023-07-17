@@ -14,7 +14,7 @@ import modelo.Conexion;
 /**
  * Servlet implementation class CrearCapacitacion
  */
-@WebServlet("/CrearCapacitacion")
+@WebServlet("/Crear-Capacitacion")
 public class CrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

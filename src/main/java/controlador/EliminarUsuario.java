@@ -5,22 +5,21 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
 import modelo.Conexion;
 
+import java.io.IOException;
 
 /**
- * Servlet implementation class EliminarCapacitacion
+ * Servlet implementation class EliminarUsuario
  */
-
-public class EliminarCapacitacion extends HttpServlet {
+@WebServlet("/Eliminar-Usuario")
+public class EliminarUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EliminarCapacitacion() {
+    public EliminarUsuario() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,12 +29,11 @@ public class EliminarCapacitacion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		 	int id = Integer.parseInt(request.getParameter("id"));
-			Conexion conexion = Conexion.getInstancia();
-	        conexion.eliminarCapacitacion(id);
+		int id = Integer.parseInt(request.getParameter("id"));
+		Conexion conexion = Conexion.getInstancia();
+        conexion.eliminarUsuario(id);
 
-	        response.sendRedirect("ListarCapacitaciones");
-	        
+        response.sendRedirect("ListarUsuarios");
 	}
 
 	/**

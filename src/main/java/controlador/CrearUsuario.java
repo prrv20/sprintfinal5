@@ -12,7 +12,7 @@ import modelo.Conexion;
 /**
  * Servlet implementation class CrearUsuario
  */
-@WebServlet("/CrearUsuario")
+@WebServlet("/Crear-Usuario")
 public class CrearUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -62,7 +62,7 @@ public class CrearUsuario extends HttpServlet {
 		String direccion = request.getParameter("direccion");
 		String comuna = request.getParameter("comuna");
 		String afp = request.getParameter("afp");
-		String sistemaSalud = request.getParameter("sitemaSalud");
+		String sistemaSalud = request.getParameter("sistemaSalud");
 		String fechaIngreso = request.getParameter("fechaIngreso");
 		String titulo = request.getParameter("titulo");
 		String area = request.getParameter("area");
@@ -70,6 +70,7 @@ public class CrearUsuario extends HttpServlet {
 		String tipoUsuario = request.getParameter("tipoUsuario");
 		
 		CrearUsuario usuario = new CrearUsuario();
+		
 		usuario.setRun(run);
 		usuario.setNombreCompleto(nombreCompleto);
 		usuario.setFechaNacimiento(fechaNacimiento);

@@ -18,7 +18,7 @@ import modelo.Conexion;
  * Servlet implementation class UserLogin
  */
 
-@WebServlet("/Login")
+
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

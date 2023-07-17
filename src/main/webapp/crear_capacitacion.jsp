@@ -40,7 +40,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="crear_usuarios.jsp">Crear Usuarios</a></li>
-            <li><a class="dropdown-item" href="listar_usuarios.jsp">Listar Usuarios</a></li>
+            <li><a class="dropdown-item" href="ListarUsuarios">Listar Usuarios</a></li>
           </ul>
         </li>
         <li class="nav-item">

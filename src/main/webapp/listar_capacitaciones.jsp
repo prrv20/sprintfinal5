@@ -49,7 +49,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="crear_usuarios.jsp">Crear Usuario</a></li>
-            <li><a class="dropdown-item" href="listar_usuarios.jsp">Listar Usuarios</a></li>
+            <li><a class="dropdown-item" href="ListarUsuarios">Listar Usuarios</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -104,4 +104,5 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>   
 	<script type="text/javascript"src="./assets/js/script.js"></script>
 </body>
+<% out.print("Session id:" + session.getId()); %>
 </html>

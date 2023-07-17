@@ -1,7 +1,6 @@
 package controlador;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,12 +8,12 @@ import java.io.IOException;
 import java.util.List;
 
 import modelo.Conexion;
-import controlador.CrearCapacitacion;
+
 
 /**
  * Servlet implementation class ListarCapacitacion
  */
-@WebServlet("/ListarCapacitaciones")
+
 public class ListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

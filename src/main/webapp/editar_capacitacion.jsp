@@ -1,10 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <%@page import="controlador.EditarCapacitacion"%>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Registro de Empleado</title>
-<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>Registro de capacitaciones</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <%
     session=request.getSession(false);
@@ -15,42 +18,47 @@
 
 %>
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary"style="background-color: #37729c;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Menu</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#"><img src="assets/logo.png" alt="Logo" width="" height="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="usuario.jsp">Home</a>
+          <a class="nav-link active" aria-current="page" href="dashboard.jsp">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="crear_capacitacion.jsp">Crear Capacitacion</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Capacitaciones
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="crear_capacitacion.jsp">Crear Capacitacion</a></li>
+            <li><a class="dropdown-item" href="ListarCapacitaciones">Listar Capacitaciones</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ListarCapacitaciones">Listar Capacitaciones</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="CrearUsuario">Crear Usuario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ListarUsuarios">Listar Usuarios</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuarios
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="crear_usuarios.jsp">Crear Usuario</a></li>
+            <li><a class="dropdown-item" href="ListarUsuarios">Listar Usuarios</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contacto.jsp">Contacto</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link" href="cerrar_sesion.jsp">Cerrar Sesion</a>
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-danger" onclick="window.location.href='cerrar_sesion.jsp';">Cerrar Sesion </button>
         </li>
       </ul>
-      <span class="navbar-text">
-        Sistema Asesoria Prevencion De Riesgo V1.0
-      </span>
+
     </div>
   </div>
 </nav>
+
 	<div class="container col-lg-8 mt-4">
 		<h1>Editar Capacitaciones</h1>
 		<% EditarCapacitacion capacitacion = (EditarCapacitacion) request.getAttribute("capacitacion"); %>
@@ -86,14 +94,13 @@
 				<label for="nombre">Cantidad de Asistentes:</label> 
 				<input type="text" class="form-control" id="cantidad" name="cantidad" required value="<%= capacitacion.getCantidad() %>">
 			</div>
+			<br>
 			<button type="submit" class="btn btn-primary">Actualizar</button>
 		</form>
 
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

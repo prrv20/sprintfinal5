@@ -27,7 +27,7 @@
           <a class="nav-link" href="login_user.jsp">Login</a>
         </li>
       </ul>
-      <span class="navbar-text"> FullAsesorias V1.0.1</span>
+      <span class="navbar-text"><% out.print("Session id:" + session.getId()); %></span>
     </div>
   </div>
 </nav>

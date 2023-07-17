@@ -5,17 +5,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+
 import modelo.Conexion;
 
-
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Servlet implementation class ListadoUsuarios
+ * Servlet implementation class EditarUsuario
  */
-
-public class ListarUsuarios extends HttpServlet {
+@WebServlet("/Editar-Usuario")
+public class EditarUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
@@ -32,11 +32,12 @@ public class ListarUsuarios extends HttpServlet {
 	private String area;
 	private String experiencia;
 	private String tipoUsuario;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarUsuarios() {
+    public EditarUsuario() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,14 +46,13 @@ public class ListarUsuarios extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		int id = Integer.parseInt(request.getParameter("id"));
 		Conexion conexion = Conexion.getInstancia();
-		 List<ListarUsuarios>  listaUsuarios = conexion.obtenerUsuarios();
+		EditarUsuario usuario = conexion.editarUsuarioID(id);
 
-		 request.setAttribute("usuarios", listaUsuarios);
-	     request.getRequestDispatcher("listar_usuarios.jsp").forward(request, response);
+        request.setAttribute("usuario", usuario);
+        request.getRequestDispatcher("editar_usuario.jsp").forward(request, response);
 	}
 
 	/**
@@ -61,8 +61,6 @@ public class ListarUsuarios extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
-		
 	}
 
 	public int getId() {

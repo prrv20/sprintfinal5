@@ -11,10 +11,13 @@ import java.util.List;
 import controlador.ActualizarCapacitacion;
 import controlador.CrearCapacitacion;
 import controlador.EditarCapacitacion;
+import controlador.EditarUsuario;
 import controlador.ListarCapacitacion;
+import controlador.ListarUsuarios;
 import controlador.Login;
 import controlador.CrearUsuario;
-import modelo.Usuario;
+import controlador.ActualizarUsuario;
+
 
 public class Conexion {
     private static Conexion instancia;
@@ -204,11 +207,126 @@ public class Conexion {
             e.printStackTrace();
         }
     }
-    		
-    		
-    		
-    	
+    
+    public List<ListarUsuarios> obtenerUsuarios() {
+    	List<ListarUsuarios> listaUsuarios = new ArrayList<>();
+    			
+    	String consulta = "SELECT id, rut, nombreCompleto, fechaNacimiento, telefono, direccion, comuna, afp, sistemaSalud, fechaIngreso, titulo, area, experiencia, tipoUsuario FROM asesorias.usuario";
+
+        try (Connection conexion = obtenerConexion();
+             PreparedStatement statement = conexion.prepareStatement(consulta);
+             ResultSet resultSet = statement.executeQuery()) {
+        	
+        	while (resultSet.next()) {
+            	ListarUsuarios usuario = new ListarUsuarios();
+                usuario.setId(resultSet.getInt("id"));
+                usuario.setRun(resultSet.getString("rut"));
+                usuario.setNombreCompleto(resultSet.getString("nombreCompleto"));
+                usuario.setFechaNacimiento(resultSet.getString("fechaNacimiento"));
+                usuario.setTelefono(resultSet.getString("telefono"));
+                usuario.setDireccion(resultSet.getString("direccion"));
+                usuario.setComuna(resultSet.getString("comuna"));
+                usuario.setAfp(resultSet.getString("afp"));
+                usuario.setSistemaSalud(resultSet.getString("sistemaSalud"));
+                usuario.setFechaIngreso(resultSet.getString("fechaIngreso"));
+                usuario.setTitulo(resultSet.getString("titulo"));
+                usuario.setArea(resultSet.getString("area"));
+                usuario.setExperiencia(resultSet.getString("experiencia"));
+                usuario.setTipoUsuario(resultSet.getString("tipoUsuario"));
+                
+                listaUsuarios.add(usuario);
+                
+        	}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaUsuarios;
+        }
+    
+    public EditarUsuario editarUsuarioID(int id) {
+        EditarUsuario usuario = null;
+        String consulta = "SELECT id, rut, nombreCompleto, fechaNacimiento, telefono, direccion, comuna, afp, sistemaSalud, fechaIngreso, titulo, area, experiencia, tipoUsuario FROM asesorias.usuario WHERE id = ?";
+
+        try (Connection conexion = obtenerConexion();
+             PreparedStatement statement = conexion.prepareStatement(consulta)) {
+            statement.setInt(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    usuario = new EditarUsuario();
+                    
+                    usuario.setId(resultSet.getInt("id"));
+                    usuario.setRun(resultSet.getString("rut"));
+                    usuario.setNombreCompleto(resultSet.getString("nombreCompleto"));
+                    usuario.setFechaNacimiento(resultSet.getString("fechaNacimiento"));
+                    usuario.setTelefono(resultSet.getString("telefono"));
+                    usuario.setDireccion(resultSet.getString("direccion"));
+                    usuario.setComuna(resultSet.getString("comuna"));
+                    usuario.setAfp(resultSet.getString("afp"));
+                    usuario.setSistemaSalud(resultSet.getString("sistemaSalud"));
+                    usuario.setFechaIngreso(resultSet.getString("fechaIngreso"));
+                    usuario.setTitulo(resultSet.getString("titulo"));
+                    usuario.setArea(resultSet.getString("area"));
+                    usuario.setExperiencia(resultSet.getString("experiencia"));
+                    usuario.setTipoUsuario(resultSet.getString("tipoUsuario"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuario;
     }
+    
+    public void actualizarUsuario(ActualizarUsuario usuario) {
+        String consulta = "UPDATE asesorias.usuario SET rut = ?, nombreCompleto = ?, fechaNacimiento = ?, telefono = ?, direccion = ?, comuna = ?, afp = ?, sistemaSalud = ?, fechaIngreso = ?, titulo = ?, area = ?, experiencia = ?, tipoUsuario = ? WHERE id = ?";
+
+        try (Connection conexion = obtenerConexion();
+             PreparedStatement statement = conexion.prepareStatement(consulta)) {
+        	
+        	statement.setString(1, usuario.getRun());
+    		statement.setString(2, usuario.getNombreCompleto());
+    		statement.setString(3, usuario.getFechaNacimiento());
+    		statement.setString(4, usuario.getTelefono());
+    		statement.setString(5, usuario.getDireccion());
+    		statement.setString(6, usuario.getComuna());
+    		statement.setString(7, usuario.getAfp());
+    		statement.setString(8, usuario.getSistemaSalud());
+    		statement.setString(9, usuario.getFechaIngreso());
+    		statement.setString(10, usuario.getTitulo());
+    		statement.setString(11, usuario.getArea());
+    		statement.setString(12, usuario.getExperiencia());
+    		statement.setString(13, usuario.getTipoUsuario());
+            statement.setInt(14,usuario.getId());
+            
+            
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void eliminarUsuario(int id) {
+        String consulta = "DELETE FROM usuario WHERE id = ?";
+
+        try (Connection conexion = obtenerConexion();
+             PreparedStatement statement = conexion.prepareStatement(consulta)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+                	   
+                   
+                	   
+                	   
+}
+    
+    
+    
+    		
+ 
     
     
   
