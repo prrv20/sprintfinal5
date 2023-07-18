@@ -7,3 +7,5 @@ En cuanto a su arquitectura, el sistema se conecta a una base de datos MySQL ubi
 El desarrollo del proyecto se llevó a cabo mediante la creación de una aplicación web en Java, siguiendo el patrón Modelo-Vista-Controlador (MVC). Las vistas se implementaron utilizando archivos JSP dinámicos, los cuales se complementaron con CSS Bootstrap y JavaScript para mejorar la experiencia del usuario. Por otro lado, el controlador se diseñó mediante el uso de servlets, mientras que el modelo se estructuró mediante clases de Java.
 
 El trabajo del Equipo 1 ha logrado ofrecer una solución tecnológica completa y funcional, destacando por su enfoque en la mejora de procesos empresariales, la eficiencia en la gestión de clientes y la seguridad de la información. Estamos orgullosos de los resultados alcanzados y el impacto positivo que este proyecto ha generado tanto para la empresa como para sus clientes.
+
+Pedro Rodriguez https://github.com/prrv20/sprintfinal5
