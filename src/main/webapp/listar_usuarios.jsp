@@ -64,6 +64,7 @@
 
  <div class="container">
         <h1 class="mt-4">Listado De Usuarios Registrados</h1>
+
         <table class="table table-striped mt-4">
             <thead>
                 <tr>
@@ -80,7 +81,8 @@
                     <th>Titulo</th>
                     <th>Area</th>
                     <th>Experiencia</th>
-                    <th>Tipo Usuario</th> 
+                    <th>Tipo Usuario</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -108,6 +110,7 @@
                     </tr>
                 <% } %>
             </tbody>
+
         </table>
     </div>
 

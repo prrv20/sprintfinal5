@@ -76,6 +76,7 @@
                     <th>Hora</th>
                     <th>Lugar</th>
                     <th>Cantidad</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>

@@ -17,6 +17,7 @@ import controlador.ListarUsuarios;
 import controlador.Login;
 import controlador.CrearUsuario;
 import controlador.ActualizarUsuario;
+import controlador.ContactoController;
 
 
 public class Conexion {
@@ -316,12 +317,37 @@ public class Conexion {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-                	   
-                   
-                	   
-                	   
+    } 
+    
+    public boolean registrar(Contacto contacto) {
+		String query = "INSERT INTO contacto(nombre, email, mensaje) values (?, ?, ? )";
+		
+		
+		try {Connection conexion = obtenerConexion();
+			
+			PreparedStatement statement = conexion.prepareStatement(query);
+			statement.setString(1, contacto.getNombre());
+			statement.setString(2, contacto.getEmail());
+			statement.setString(3, contacto.getMensaje());
+			
+			if(statement.executeUpdate()>0) {
+				System.out.println("Agregado Correctamente");
+				return true;
+			} else {
+				System.out.println("No se pudo Agregar");
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
 }
+                	   
+
+
     
     
     

@@ -103,4 +103,14 @@
     <servlet-name>EliminarUsuario</servlet-name>
     <url-pattern>/EliminarUsuario</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Contacto</display-name>
+    <servlet-name>Contacto</servlet-name>
+    <servlet-class>controlador.Contacto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Contacto</servlet-name>
+    <url-pattern>/Contacto</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -67,7 +67,7 @@
                 </div>
                 
               </div>
-              <label for="opciones">Tipo de Usuario:</label>
+              <label class="form-label" for="opciones">Tipo de Usuario:</label>
               <select id="opciones" onchange="mostrarCampos()" class="form-select"aria-label="Default select example"name="tipoUsuario">
                 <option selected>Seleccione el tipo de Usuario</option>
                 <option value="Cliente">Cliente</option>

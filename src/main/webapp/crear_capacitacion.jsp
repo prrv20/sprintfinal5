@@ -54,15 +54,15 @@
     </div>
   </div>
 </nav>
-	<div class="container col-lg-8 mt-4">
+	<div class="container col-sm-10 col-md-8">
 		<h1>Registro de Capacitaciones</h1>
 		<form action="CrearCapacitacion" method="post" id="formcapacitacion">
-			<div class="form-group">
-				<label for="nombre">Rut Cliente:</label> 
+			<div class="form-group mt-3">
+				<label class="form-label" for="nombre">Rut Cliente:</label> 
 				<input type="text" class="form-control" id="rut" name="rut" placeholder="Ingresar Rut Sin puntos y con guion" required>
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group mt-3">
 				<label for="exampleDataList" class="form-label">Dia de la Capacitacion</label> 
 				<input class="form-control" list="datalistOptions" id="dia" name="dia" placeholder="Seleccione el dia">
 				<datalist id="datalistOptions">
@@ -75,20 +75,20 @@
 					<option value="Domingo">
 				</datalist>
 			</div>
-			<div class="form-group">
-				<label for="correo">Hora:</label> 
+			<div class="form-group mt-3">
+				<label class="form-label" for="correo">Hora:</label> 
 				<input type="time" class="form-control" id="hora" name="hora" placeholder="Ingresar hora" required>
 			</div>
-			<div class="form-group">
-				<label for="nombre">Lugar:</label> 
+			<div class="form-group mt-3">
+				<label class="form-label" for="nombre">Lugar:</label> 
 				<input type="text" class="form-control" id="lugar" name="lugar" placeholder="Ingresar lugar" required>
 			</div>
-			<div class="form-group">
-				<label for="nombre">Cantidad de Asistentes:</label> 
+			<div class="form-group mt-3">
+				<label class="form-label" for="nombre">Cantidad de Asistentes:</label> 
 				<input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad de asistentes" required>
 			</div>
 			<br>
-			<button type="submit" class="btn btn-primary" id="btn-registar">Registrar</button>
+			<button type="submit" class="btn btn-primary mt-3" id="btn-registar">Registrar</button>
 		</form>
 
 	</div>

@@ -16,7 +16,7 @@
     }
 
 %>
-<body>
+<body onload="mostrarCampos()">
 	<nav class="navbar navbar-expand-lg bg-body-tertiary"style="background-color: #37729c;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="assets/logo.png" alt="Logo" width="" height="50"></a>
@@ -76,15 +76,11 @@
                     <label for="exampleFormControlInput1" class="form-label">Fecha Nacimiento</label>
                     <input type="date" class="form-control" id="exampleFormControlInput1" name="fechaNacimiento" placeholder="Fecha Nacimiento"value="<%= usuario.getFechaNacimiento()%>">
                 </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Tipo de usuario</label>
+                    <input type="text" class="form-control" id="opciones" name="fechaNacimiento" placeholder="tipoUsuario"value="<%= usuario.getTipoUsuario()%>" disabled>
+                </div>
                 
-              </div>
-              <label for="opciones">Tipo de Usuario:</label>
-              <select id="opciones" onchange="mostrarCampos()" class="form-select"aria-label="Default select example"name="tipoUsuario"value="<%= usuario.getTipoUsuario() %>">
-                <option selected>Seleccione el tipo de Usuario</option>
-                <option value="Cliente">Cliente</option>
-                <option value="Profesional">Profesional</option>
-                <option value="Administrativo">Administrativo</option>
-              </select>
               
         
               <div class="cliente">
@@ -97,13 +93,13 @@
                     <input type="text" id="campo2_input" class="form-control mb-2"name="comuna"value="<%= usuario.getComuna() %>" />
                     <label for="campo2_input" class="mt-2"></label>Sistema de Salud:</label>
                     <select class="form-select mt-2" aria-label="Default select example"name="sistemaSalud"value="<%= usuario.getSistemaSalud() %>">
-                        <option selected>Selecciona Sistema de Salud</option>
+                        
                         <option value="Fonasa">FONASA</option>
                         <option value="Isapre">ISAPRE</option>    
                     </select>
                     <label for="campo2_input" class="mt-2">AFP:</label>
                     <select class="form-select" aria-label="Default select example"name="afp"value="<%= usuario.getAfp() %>">
-                        <option selected>Elige Una Opcion</option>
+                        
                         <option value="Capital">AFP CAPITAL</option>
                         <option value="Habitat">AFP HABITAT</option>
                         <option value="Cuprum">AFP CUPRUM</option>
